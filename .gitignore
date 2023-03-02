@@ -1,0 +1,6 @@
+*env
+id_rsa.pub
+id_rsa
+*private_key
+*secret.yaml
+.vscode
