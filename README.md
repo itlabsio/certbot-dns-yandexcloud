@@ -1,6 +1,18 @@
 # Certbot manual DNS challenge
 
+## Table of content
+
+- [Common](#common)
+- [How to build](#how-to-build)
+- [Quickstart](#quickstart)
+
 ## Common
+
+This application automates the process of completing a dns-01 challenge (DNS01) by creating, and subsequently modification, TXT records using the Yandex.Cloud API.
+
+When you run certbot with key **--manual**, he places validation TXT record (for DNS) in environment variable CERTBOT_VALIDATION. Then certbot causes shell-script **hook.sh** which configures certbot-dns-yandexcloud for work with Yandex.Cloud DNS API. Certbot-dns-yandexcloud goes to Yandex.Cloud DNS API and creates (or modify) TXT record for successfully complete the challenge. Next the execution flow is transferred to the certbot, which successfully receives the SSL certificate.
+
+## How to build
 
 go 1.18.9
 
